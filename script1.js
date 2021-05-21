@@ -1,51 +1,67 @@
 
 
-var mutltichoices= [
+var mutltichoices = [
 
     {
-// Which of the following function of Array object represents the source code of an object?
+        questions: "Which of the following function of Array object represents the source code of an object?",
+        mutltichoices: ["toSource()", "splice()", "toString()", "unshift()"],
+        responses: "toSource()"
 
-multichoices:[toSource(), splice(),toString(), unshift()]
+    },
 
-answer -toSource() − Represents the source code of an object.
-}
-// Which of the following function of Array object returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found?
+    {
+        questions: "Which of the following function of Array object returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found?",
+        mutltichoices: ["indexOf()", "join()", "lastIndexOf()", "map()"],
+        Responses: "indexOf()"
+    },
 
-multichoices:[indexOf(), join(), lastIndexOf(), map()]
-answer -indexOf() 
+    {
+        questions: "Which of the following function of String object causes a string to be displayed as a subscript, as if it were in a <sub> tag?",
+        mutltichoices: ["sup()","small()", "strike()", "sub()"],
+        responses: "sub()"
+    },
 
-// Which of the following function of String object causes a string to be displayed as a subscript, as if it were in a <sub> tag?
+    {
 
-mutltichoices:[ sup(), small(), strike(),sub()]
-answer - sub() − 
+        questions: "Which built-in method sorts the elements of an array?",
+        options: ["changeOrder(order)", "order()", "sort()", "None of the above"],
+        responses: "sort()"
+},
+    {
+        questions: "Which of the following is not considered a JavaScript operator?",
+        options: ["new", "this", "delete", "typeof"],
+        responses: "this"
+    },
 
-//4 - Which built-in method sorts the elements of an array?
+    {
+        questions:"Using _______ statement is how you test for a specific condition.",
+        options: ["Select", "If", "Switch", "For"],
+        responses: "if"
+},
 
-multichoices:[changeOrder(order), order(), sort(),None of the above.] - 
+];
 
-answer - sort() method sorts the elements of an array.
+/////////state variab
 
-//5  Which of the following is not considered a JavaScript operator?
-multichoices: [new, this, delete, typeof]
- Ans: this
-
- //Using _______ statement is how you test for a specific condition.
- multichoices: [Select,If, Switch, For]
-  Ans: if
-
+var score = 0;
+var questionIndex = 0;
 
 
+var currentTimeframe = document.querySelector("#currentTimeframe");
+var clock = document.querySelector("#press here")
+var questionsDiv = document.querySelector("#questionsDiv");
+var pagecover = document.querySelector("#pagecover");
 
 
+var secondsleft = 60;
+var holdInterval = 0;
+var penalty = 10;
+var ulCreate = document.querySelector("ul");
 
 
-7 Which of the following is true about typeof operator in JavaScript?
+clock.addEventListener("click", function () {
 
- multichoices :[] A - The typeof is a unary operator that is placed before its single operand, which can be of any type.
+    if (holdInterval === 0) {
 
-B - Its value is a string indicating the data type of the operand.
-
-C - Both of the above.
-
-D - None of the above.
-]
+    }
+})
