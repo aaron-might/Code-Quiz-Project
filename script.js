@@ -1,4 +1,4 @@
-
+//varibales
 
 var mutltichoices = [
 
@@ -59,9 +59,9 @@ var penalty = 10;
 var ulCreate = document.querySelector("ul");
 
 
-clock.addEventListener("click", function () {
+//clock.addEventListener("click", function () {
 
-    if (holdInterval === 0) {
+  //  if (holdInterval === 0) {
 
-    }
-})
+   // }
+//})
