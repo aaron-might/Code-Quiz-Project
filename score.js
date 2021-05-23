@@ -1,6 +1,6 @@
 var highScore= document.querySelector("#highscore");
 var clear= document.querySelector("#clear");
-var back=document.querySelector("#back");
+var back = document.querySelector("#back");
 
 
 clear.addEventListener("click",function(){
@@ -9,8 +9,8 @@ clear.addEventListener("click",function(){
 
 });
 
-var allScore= localStorage.getItem("allscore");
-allscore = JSON.parse(allscore);
+var allScore= localStorage.getItem("allScore");
+allScore = JSON.parse(allScore);
 
 
 if (allScore !== null) {
@@ -22,6 +22,6 @@ if (allScore !== null) {
     }
 }
 // Event listener to move to index page
-Back.addEventListener("click", function () {
+back.addEventListener("click", function () {
     window.location.replace("index.html");
 });

@@ -1,41 +1,40 @@
 //varibales
 
-var mutltichoices = [
+var multichoices = [
 
     {
         questions: "Which of the following function of Array object represents the source code of an object?",
-        mutltichoices: ["toSource()", "splice()", "toString()", "unshift()"],
+        possibility: ["toSource()", "splice()", "toString()", "unshift()"],
         responses: "toSource()"
 
     },
 
     {
         questions: "Which of the following function of Array object returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found?",
-        mutltichoices: ["indexOf()", "join()", "lastIndexOf()", "map()"],
-        Responses: "indexOf()"
+        possibility: ["indexOf()", "join()", "lastIndexOf()", "map()"],
+        responses: "indexOf()"
     },
 
     {
         questions: "Which of the following function of String object causes a string to be displayed as a subscript, as if it were in a <sub> tag?",
-        mutltichoices: ["sup()", "small()", "strike()", "sub()"],
+        possibility: ["sup()", "small()", "strike()", "sub()"],
         responses: "sub()"
     },
 
     {
-
         questions: "Which built-in method sorts the elements of an array?",
-        options: ["changeOrder(order)", "order()", "sort()", "None of the above"],
+        possibility: ["changeOrder(order)", "order()", "sort()", "None of the above"],
         responses: "sort()"
     },
     {
         questions: "Which of the following is not considered a JavaScript operator?",
-        options: ["new", "this", "delete", "typeof"],
+        possibility: ["new", "this", "delete", "typeof"],
         responses: "this"
     },
 
     {
         questions: "Using _______ statement is how you test for a specific condition.",
-        options: ["Select", "If", "Switch", "For"],
+        possibility: ["Select", "If", "Switch", "For"],
         responses: "if"
     },
 
@@ -44,11 +43,11 @@ var mutltichoices = [
 /////////state variab
 
 var score = 0;
-var questionIndex = 0;
+var multichoicesIndex = 0;
 
 
 var currentTimeframe = document.querySelector("#currentTimeframe");
-var clock = document.querySelector("#press here");
+var Chronometer = document.querySelector("#chronometer"); ("#press here");
 var questionsDiv = document.querySelector("#questionsDiv");
 var pageCover = document.querySelector("#pageCover");
 
@@ -56,72 +55,75 @@ var pageCover = document.querySelector("#pageCover");
 var secondsLeft = 60;
 var holdInterval = 0;
 var penalty = 10;
-var ulCreate = document.querySelector("ul");
+var ulCreate = document.createElement("ul");
 
 //clock
 
-clock.addEventListener("click", function () {
+Chronometer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
             currentTimeframe.textContent = "Time:" + secondsLeft;
 
-            if (secondsleft <= 0) {
+            if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 alldone();
                 currentTimeframe.textContent = "Time has ended";
             }
         }, 1000);
     }
-    render(questionIndex);
+    render(multichoicesIndex);
 });
 
-function render(questionIndex) {
+function render(multichoicesIndex) {
     questionsDiv.innerHTML = " ";
     ulCreate.innerHTML = " ";
 
-    for (var i = 0; i < questions.length; i++) {
-        var userQuestion = questions[questionIndex].title;
-        var userChoices = questions[questionIndex].choices;
-        questionsDiv.textContent = userQuestion;
+    for (var i = 0; i < multichoices.length; i++) {
+        var usermultiChoices = multichoices[multichoicesIndex].questions;
+        var userpossibility = multichoices[multichoicesIndex].possibility;
+        questionsDiv.textContent = usermultiChoices;
     }
 
 
-    userChoices.forEach(function (newItem) {
+    userpossibility.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
         questionsDiv.appendChild(ulCreate);
-        ulcreate.appendChild(listItem);
+        ulCreate.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
 
 }
 
 function compare(event) {
+
+    var element = event.target;
+
     if (element.matches("li")) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
 
-        if (element.textContent == questions[questionsIndex].answer) {
+        if (element.textContent == multichoices[multichoicesIndex].responses) {
             score++;
-            createDiv.textcontent = "Well done. this is the answer: " + questions[questionsIndex].answer;
+            createDiv.textcontent = "Well done. this is the answer: " + multichoices[multichoicesIndex].responses;
 
         }
         else {
             secondLeft = secondLeft - penalty;
-            createDiv.textcontent = "Fail. the answer is : " + questions[questionsIndex].answer;
+            createDiv.textcontent = "Fail. the answer is : " + multichoices[multichoicesIndex].responses;
         }
     }
 
 
-    questionIndex++;
+    multichoicesIndex++;
 
-    if (questionIndex >= questions.length) {
+    if (multichoicesIndex >= multichoices.length) {
         Alldone();
-        createDiv.textContent = "the quiz has ended" + " " + " You got " + "/" + questions.length + "right";
+        createDiv.textContent = "the quiz has ended" + " " + " You got " + "/" + multichoices.length + "right";
     }
     else {
-        render(questionIndex);
+        render(multichoicesIndex);
     }
     questionDiv.appendChild(createDiv);
 }
@@ -129,7 +131,7 @@ function compare(event) {
 
 function alldone() {
     questionsDiv.innerHTML = " ";
-    currentTime.innerHTML = " ";
+    currentTimeframe.innerHTML = " ";
 
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
@@ -138,7 +140,7 @@ function alldone() {
 
     questionsDiv.appendChild(createH1);
 
-    var createH1 = document.createElement("p");
+    var createP = document.createElement("p");
     createImageBitmap.setAttribute("id", "createP");
 
     questionsDiv.appendChild(createP);
@@ -181,27 +183,27 @@ function alldone() {
             console.log("No input value ");
         }
         else {
-            var finalscore = {
+            var finalScore = {
                 name: name,
                 score: timeRemaining
 
             }
-            console.log(finalscore);
-            var allscores = localStorage.getItem("all scores");
+            console.log(finalScore);
+            var allScores = localStorage.getItem("allScores");
             if (allScores === null) {
                 allScores = [];
             }
             else {
-                allScores = JSON.parse(allScore);
+                allScores = JSON.parse(allScores);
             }
-            allScore.push(finalscore);
+            allScores.push(finalScore);
             var newScore = JSON.stringify(allScore);
-            localStorage.setItem("allScore", newScore);
+            localStorage.setItem("allScores", newScore);
             window.location.replace("./score.html");
 
         }
     });
-}    
+}
 
 
 
