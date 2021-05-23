@@ -1,4 +1,4 @@
-var highscore= document.querySelector("#highscore");
+var highScore= document.querySelector("#highscore");
 var clear= document.querySelector("#clear");
 var back=document.querySelector("#back");
 
@@ -9,15 +9,19 @@ clear.addEventListener("click",function(){
 
 });
 
-var allscore= localStorage.getItem("allscore");
+var allScore= localStorage.getItem("allscore");
 allscore = JSON.parse(allscore);
 
 
-if (allscore !== null) {
+if (allScore !== null) {
 
-    for (var k=0; k<allscore.length; k++) {
+    for (var i=0; i<allscore.length; i++) {
         var createLi= document.querySelector("#createLi");
-        highscore.appendChild(createLi);
+        highScore.appendChild(createLi);
 
     }
 }
+// Event listener to move to index page
+Back.addEventListener("click", function () {
+    window.location.replace("index.html");
+});
