@@ -25,7 +25,7 @@ body{
     display:flex;
     justify-content:in;
     flex-direction:column;
-   
+    
 }
 
 #questionDiv {
@@ -39,6 +39,7 @@ body{
     padding:10px 28px;
     font-size: 26px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-color: red;
     color: antiquewhite;
 }
 
@@ -52,6 +53,7 @@ body{
     left: 65%;
     width: max-content;
     text-align: left;
+    border-color: red;
 }
 
 #back{
