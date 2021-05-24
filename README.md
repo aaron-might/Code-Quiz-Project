@@ -1,13 +1,11 @@
-# 04 Web APIs: Code Quiz
 
-## Your Task
+# Code Quiz project
+homework 4
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+## the  Task
 
-To help familiarize you with these tests and allow you to use the skills covered in this unit, this week’s homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
-
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
-
+This project is part of my journey as a full-stack web developer, to complete a coding assessment&mdash;
+theses assessment typical contains multiple-choice  questions and interaction Challenges.in this homework assignment, my challenge is to build a code quiz with multiple-choice  questions.This week’s coursework will equip you with all the skills you need to succeed in this assignment. this homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface.
 ## User Story
 
 ```
@@ -41,49 +39,24 @@ The following animation demonstrates the application functionality:
 ## Grading Requirements
 
 This homework is graded based on the following criteria: 
+### The script of this project 
+### To Execute the project:
+*open in browser
 
-### Technical Acceptance Criteria: 40%
+### prerequisites
 
-* Satisfies all of the preceding acceptance criteria.
+to install this application, you wil need a text editor. i recommend Visual Studio Code.
 
-### Deployment: 32%
+### Installing
+to install this code, download the zip file, or use GitHub's guidelines to clone the repository.
 
-* Application deployed at live URL.
+### summary
+* html and CSS and Javascript documents create a quiz with multiple choice questions with JavaScript trivia
+* this project emphasizes  the use of using JavaScript to make dynamic change to an HTML document
+* this project utilizes the use of appending HTML pages
 
-* Application loads with no errors.
+### this project is
 
-* Application GitHub URL submitted.
 
-* GitHub repository contains application code.
 
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+## authors

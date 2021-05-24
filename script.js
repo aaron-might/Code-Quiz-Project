@@ -44,6 +44,7 @@ var multichoices = [
 
 var score = 0;
 var multichoicesIndex = 0;
+var startDiv = document.querySelector("#startDiv");
 
 
 var currentTimeframe = document.querySelector("#currentTimeframe");
@@ -72,6 +73,7 @@ Chronometer.addEventListener("click", function () {
             }
         }, 1000);
     }
+    startDiv.setAttribute("style", "display:none");
     render(multichoicesIndex);
 });
 
