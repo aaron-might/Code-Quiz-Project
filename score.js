@@ -1,4 +1,4 @@
-var highScore= document.querySelector("#highscore");
+var highScore= document.querySelector("#highScore");
 var clear= document.querySelector("#clear");
 var back = document.querySelector("#back");
 
@@ -9,19 +9,20 @@ clear.addEventListener("click",function(){
 
 });
 
-var allScore= localStorage.getItem("allScore");
-allScore = JSON.parse(allScore);
+var allScores= localStorage.getItem("allScores");
+allScores = JSON.parse(allScores);
 
 
-if (allScore !== null) {
+if (allScores !== null) {
 
-    for (var i=0; i<allscore.length; i++) {
+    for (var i=0; i<allScores.length; i++) {
         var createLi= document.querySelector("#createLi");
+        createLi.textContent = allScores[i].name + " " + allScores[i].score;
         highScore.appendChild(createLi);
-
     }
+   
 }
 // Event listener to move to index page
 back.addEventListener("click", function () {
-    window.location.replace("index.html");
+    window.location.replace("./index.html");
 });

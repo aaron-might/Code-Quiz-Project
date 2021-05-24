@@ -47,7 +47,7 @@ var multichoicesIndex = 0;
 
 
 var currentTimeframe = document.querySelector("#currentTimeframe");
-var Chronometer = document.querySelector("#chronometer"); ("#press here");
+var Chronometer = document.querySelector ("#startchronometer");
 var questionsDiv = document.querySelector("#questionsDiv");
 var pageCover = document.querySelector("#pageCover");
 
@@ -57,7 +57,7 @@ var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
-//clock
+//chronometer
 
 Chronometer.addEventListener("click", function () {
     if (holdInterval === 0) {
@@ -106,46 +106,43 @@ function compare(event) {
 
         if (element.textContent == multichoices[multichoicesIndex].responses) {
             score++;
-            createDiv.textcontent = "Well done. this is the answer: " + multichoices[multichoicesIndex].responses;
+            createDiv.textContent = "Well done. this is the answer: " + multichoices[multichoicesIndex].responses;
 
         }
         else {
-            secondLeft = secondLeft - penalty;
-            createDiv.textcontent = "Fail. the answer is : " + multichoices[multichoicesIndex].responses;
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Fail. the answer is : " + multichoices[multichoicesIndex].responses;
         }
     }
-
-
     multichoicesIndex++;
 
     if (multichoicesIndex >= multichoices.length) {
-        Alldone();
-        createDiv.textContent = "the quiz has ended" + " " + " You got " + "/" + multichoices.length + "right";
+        alldone();
+        createDiv.textContent = "the quiz has ended" + " " + " You got " +score + "/" + multichoices.length + "right";
     }
     else {
         render(multichoicesIndex);
     }
-    questionDiv.appendChild(createDiv);
+    questionsDiv.appendChild(createDiv);
 }
-
 
 function alldone() {
     questionsDiv.innerHTML = " ";
     currentTimeframe.innerHTML = " ";
 
     var createH1 = document.createElement("h1");
-    createH1.setAttribute("id", "createH1");
-    createH1.setAttribute("well fone");
+    createH1.setAttribute("id", "createh1");
+    createH1.setAttribute = ("well fone");
 
 
     questionsDiv.appendChild(createH1);
 
     var createP = document.createElement("p");
-    createImageBitmap.setAttribute("id", "createP");
+    createP.setAttribute("id", "createP");
 
     questionsDiv.appendChild(createP);
 
-    if (secondsleft >= 0) {
+    if ( secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
@@ -157,7 +154,7 @@ function alldone() {
 
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
-    createLabel.textcontent = "put your name: ";
+    createLabel.textContent = "put your name ";
 
     questionsDiv.appendChild(createLabel);
 
@@ -168,7 +165,7 @@ function alldone() {
 
     questionsDiv.appendChild(createInput);
 
-    var createSubmit = document.createElement("buttn");
+    var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
@@ -197,7 +194,7 @@ function alldone() {
                 allScores = JSON.parse(allScores);
             }
             allScores.push(finalScore);
-            var newScore = JSON.stringify(allScore);
+            var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             window.location.replace("./score.html");
 
