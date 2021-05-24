@@ -9,6 +9,7 @@ body{
 
 #pageCover{
     border: 4px solid green;
+    border-radius: 32px;
     width: 500px;
     height:540px;
     position:absolute;
